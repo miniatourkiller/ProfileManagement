@@ -88,13 +88,13 @@ public class ProfileServices implements Actions{
 			this.exists("Tenant", response);
 			
 		}else {
-			if(file!=null){
+			if(file != null){
 				tenant.setProfilePic(fileUploader.uploadFile(file));
 			}
 			obj = new HashMap<>();
 			obj.put("username", tenant.getUsername());
-			String url = "http://localhost:8085/adddetails";
-			exchanger.postData(url, obj);
+//			String url = "http://localhost:8085/adddetails";
+//			exchanger.postData(url, obj);
 			tenantRepo.save(tenant);
 			this.success(response);
 		}

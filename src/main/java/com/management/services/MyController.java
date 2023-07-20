@@ -20,7 +20,7 @@ public class MyController {
 	@Autowired
 	Actions profileServices;
 @RequestMapping(value = "addTenant", method = RequestMethod.POST)
-public void addTenant(String data, MultipartFile file, HttpServletResponse response){
+public void addTenant(@RequestPart("data") String data,@RequestPart(name= "file", required = false) MultipartFile file, HttpServletResponse response){
 	profileServices.createTenant(data, file, response);
 }
 @RequestMapping(value = "addLandlord", method = RequestMethod.POST)
