@@ -1,0 +1,14 @@
+spring:
+  data:
+    mongodb:
+#      authentication-database: admin
+#      url: mongodb+srv://jgathiru91:07214101jkG@cluster0.dpnmcxl.mongodb.net/?retryWrites=true&w=majority
+#      port: 27017
+#      host:
+#      password: password
+#      database: sample_airbnb
+#      username: boomer
+      uri: mongodb+srv://e-rental:07214101@cluster0.xo6vrrf.mongodb.net/?retryWrites=true&w=majority
+      database: Profile-management
+server: 
+  port: 8082
