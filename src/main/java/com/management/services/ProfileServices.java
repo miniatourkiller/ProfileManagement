@@ -88,9 +88,7 @@ public class ProfileServices implements Actions{
 			this.exists("Tenant", response);
 			
 		}else {
-			if(!file.isEmpty()){
-				tenant.setProfilePic(fileUploader.uploadFile(file));
-			}
+			tenant.setProfilePic(fileUploader.uploadFile(file));
 			obj = new HashMap<>();
 			obj.put("username", tenant.getUsername());
 			String url = "http://localhost:8085/adddetails";
@@ -108,10 +106,12 @@ public class ProfileServices implements Actions{
 			
 		}else {
 			obj = new HashMap<>();
-			landlord.setProfilePic(fileUploader.uploadFile(file));
+			if(!file.isEmpty()) {
+				landlord.setProfilePic(fileUploader.uploadFile(file));
+			}
 			obj.put("username", landlord.getUsername());
-			String url = "http://localhost:8085/adddetails";
-			exchanger.postData(url, obj);
+//			String url = "http://localhost:8085/adddetails";
+//			exchanger.postData(url, obj);
 			ownerRepo.save(landlord);
 			this.success(response);
 		}
