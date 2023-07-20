@@ -106,7 +106,7 @@ public class ProfileServices implements Actions{
 			
 		}else {
 			obj = new HashMap<>();
-			if(!file.isEmpty()) {
+			if(file != null) {
 				landlord.setProfilePic(fileUploader.uploadFile(file));
 			}
 			obj.put("username", landlord.getUsername());
