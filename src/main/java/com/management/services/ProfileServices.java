@@ -88,7 +88,9 @@ public class ProfileServices implements Actions{
 			this.exists("Tenant", response);
 			
 		}else {
-			tenant.setProfilePic(fileUploader.uploadFile(file));
+			if(file!=null){
+				tenant.setProfilePic(fileUploader.uploadFile(file));
+			}
 			obj = new HashMap<>();
 			obj.put("username", tenant.getUsername());
 			String url = "http://localhost:8085/adddetails";
